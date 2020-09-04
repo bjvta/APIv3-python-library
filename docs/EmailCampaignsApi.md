@@ -16,11 +16,10 @@ Method | HTTP request | Description
 [**send_test_email**](EmailCampaignsApi.md#send_test_email) | **POST** /emailCampaigns/{campaignId}/sendTest | Send an email campaign to your test list
 [**update_campaign_status**](EmailCampaignsApi.md#update_campaign_status) | **PUT** /emailCampaigns/{campaignId}/status | Update an email campaign status
 [**update_email_campaign**](EmailCampaignsApi.md#update_email_campaign) | **PUT** /emailCampaigns/{campaignId} | Update an email campaign
-[**upload_image_to_gallery**](EmailCampaignsApi.md#upload_image_to_gallery) | **POST** /emailCampaigns/images | Upload an image to your account&#39;s image gallery
-
+[**upload_image_to_gallery**](EmailCampaignsApi.md#upload_image_to_gallery) | **POST** /emailCampaigns/images | Upload an image to your account&#x27;s image gallery
 
 # **create_email_campaign**
-> CreateModel create_email_campaign(email_campaigns)
+> CreateModel create_email_campaign(body)
 
 Create an email campaign
 
@@ -37,19 +36,14 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-email_campaigns = sib_api_v3_sdk.CreateEmailCampaign() # CreateEmailCampaign | Values to create a campaign
+body = sib_api_v3_sdk.CreateEmailCampaign() # CreateEmailCampaign | Values to create a campaign
 
 try:
     # Create an email campaign
-    api_response = api_instance.create_email_campaign(email_campaigns)
+    api_response = api_instance.create_email_campaign(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->create_email_campaign: %s\n" % e)
@@ -59,7 +53,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email_campaigns** | [**CreateEmailCampaign**](CreateEmailCampaign.md)| Values to create a campaign | 
+ **body** | [**CreateEmailCampaign**](CreateEmailCampaign.md)| Values to create a campaign | 
 
 ### Return type
 
@@ -67,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -94,11 +88,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -123,17 +112,17 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **email_export_recipients**
-> CreatedProcessId email_export_recipients(campaign_id, recipient_export=recipient_export)
+> CreatedProcessId email_export_recipients(campaign_id, body=body)
 
 Export the recipients of an email campaign
 
@@ -150,20 +139,15 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 campaign_id = 789 # int | Id of the campaign
-recipient_export = sib_api_v3_sdk.EmailExportRecipients() # EmailExportRecipients | Values to send for a recipient export request (optional)
+body = sib_api_v3_sdk.EmailExportRecipients() # EmailExportRecipients | Values to send for a recipient export request (optional)
 
 try:
     # Export the recipients of an email campaign
-    api_response = api_instance.email_export_recipients(campaign_id, recipient_export=recipient_export)
+    api_response = api_instance.email_export_recipients(campaign_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->email_export_recipients: %s\n" % e)
@@ -174,7 +158,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **campaign_id** | **int**| Id of the campaign | 
- **recipient_export** | [**EmailExportRecipients**](EmailExportRecipients.md)| Values to send for a recipient export request | [optional] 
+ **body** | [**EmailExportRecipients**](EmailExportRecipients.md)| Values to send for a recipient export request | [optional] 
 
 ### Return type
 
@@ -182,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -211,11 +195,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -241,11 +220,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -268,11 +247,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -298,11 +272,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -325,18 +299,13 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
 type = 'type_example' # str | Filter on the type of the campaigns (optional)
 status = 'status_example' # str | Filter on the status of the campaign (optional)
-start_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
-end_date = '2013-10-20T19:20:30+01:00' # datetime | Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either 'status' not passed and if passed is set to 'sent' ) (optional)
+start_date = '2013-10-20T19:20:30+01:00' # datetime | **Mandatory if endDate is used**. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. **Prefer to pass your timezone in date-time format for accurate result** ( only available if either 'status' not passed and if passed is set to 'sent' )  (optional)
+end_date = '2013-10-20T19:20:30+01:00' # datetime | **Mandatory if startDate is used**. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. **Prefer to pass your timezone in date-time format for accurate result** ( only available if either 'status' not passed and if passed is set to 'sent' )  (optional)
 limit = 500 # int | Number of documents per page (optional) (default to 500)
 offset = 0 # int | Index of the first document in the page (optional) (default to 0)
 
@@ -354,8 +323,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **str**| Filter on the type of the campaigns | [optional] 
  **status** | **str**| Filter on the status of the campaign | [optional] 
- **start_date** | **datetime**| Mandatory if endDate is used. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
- **end_date** | **datetime**| Mandatory if startDate is used. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. Prefer to pass your timezone in date-time format for accurate result ( only available if either &#39;status&#39; not passed and if passed is set to &#39;sent&#39; ) | [optional] 
+ **start_date** | **datetime**| **Mandatory if endDate is used**. Starting (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. **Prefer to pass your timezone in date-time format for accurate result** ( only available if either &#x27;status&#x27; not passed and if passed is set to &#x27;sent&#x27; )  | [optional] 
+ **end_date** | **datetime**| **Mandatory if startDate is used**. Ending (urlencoded) UTC date-time (YYYY-MM-DDTHH:mm:ss.SSSZ) to filter the sent email campaigns. **Prefer to pass your timezone in date-time format for accurate result** ( only available if either &#x27;status&#x27; not passed and if passed is set to &#x27;sent&#x27; )  | [optional] 
  **limit** | **int**| Number of documents per page | [optional] [default to 500]
  **offset** | **int**| Index of the first document in the page | [optional] [default to 0]
 
@@ -365,11 +334,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -394,11 +363,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -424,11 +388,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -451,11 +415,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -480,17 +439,17 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_report**
-> send_report(campaign_id, send_report)
+> send_report(body, campaign_id)
 
 Send the report of a campaign
 
@@ -509,20 +468,15 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
+body = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
 campaign_id = 789 # int | Id of the campaign
-send_report = sib_api_v3_sdk.SendReport() # SendReport | Values for send a report
 
 try:
     # Send the report of a campaign
-    api_instance.send_report(campaign_id, send_report)
+    api_instance.send_report(body, campaign_id)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->send_report: %s\n" % e)
 ```
@@ -531,8 +485,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SendReport**](SendReport.md)| Values for send a report | 
  **campaign_id** | **int**| Id of the campaign | 
- **send_report** | [**SendReport**](SendReport.md)| Values for send a report | 
 
 ### Return type
 
@@ -540,7 +494,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -550,7 +504,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **send_test_email**
-> send_test_email(campaign_id, email_to)
+> send_test_email(body, campaign_id)
 
 Send an email campaign to your test list
 
@@ -567,20 +521,15 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
+body = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
 campaign_id = 789 # int | Id of the campaign
-email_to = sib_api_v3_sdk.SendTestEmail() # SendTestEmail | 
 
 try:
     # Send an email campaign to your test list
-    api_instance.send_test_email(campaign_id, email_to)
+    api_instance.send_test_email(body, campaign_id)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->send_test_email: %s\n" % e)
 ```
@@ -589,8 +538,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**SendTestEmail**](SendTestEmail.md)|  | 
  **campaign_id** | **int**| Id of the campaign | 
- **email_to** | [**SendTestEmail**](SendTestEmail.md)|  | 
 
 ### Return type
 
@@ -598,7 +547,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -608,7 +557,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_campaign_status**
-> update_campaign_status(campaign_id, status)
+> update_campaign_status(body, campaign_id)
 
 Update an email campaign status
 
@@ -625,20 +574,15 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
+body = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign
 campaign_id = 789 # int | Id of the campaign
-status = sib_api_v3_sdk.UpdateCampaignStatus() # UpdateCampaignStatus | Status of the campaign
 
 try:
     # Update an email campaign status
-    api_instance.update_campaign_status(campaign_id, status)
+    api_instance.update_campaign_status(body, campaign_id)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->update_campaign_status: %s\n" % e)
 ```
@@ -647,8 +591,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateCampaignStatus**](UpdateCampaignStatus.md)| Status of the campaign | 
  **campaign_id** | **int**| Id of the campaign | 
- **status** | [**UpdateCampaignStatus**](UpdateCampaignStatus.md)| Status of the campaign | 
 
 ### Return type
 
@@ -656,7 +600,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -666,7 +610,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_email_campaign**
-> update_email_campaign(campaign_id, email_campaign)
+> update_email_campaign(body, campaign_id)
 
 Update an email campaign
 
@@ -683,20 +627,15 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
+body = sib_api_v3_sdk.UpdateEmailCampaign() # UpdateEmailCampaign | Values to update a campaign
 campaign_id = 789 # int | Id of the campaign
-email_campaign = sib_api_v3_sdk.UpdateEmailCampaign() # UpdateEmailCampaign | Values to update a campaign
 
 try:
     # Update an email campaign
-    api_instance.update_email_campaign(campaign_id, email_campaign)
+    api_instance.update_email_campaign(body, campaign_id)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->update_email_campaign: %s\n" % e)
 ```
@@ -705,8 +644,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateEmailCampaign**](UpdateEmailCampaign.md)| Values to update a campaign | 
  **campaign_id** | **int**| Id of the campaign | 
- **email_campaign** | [**UpdateEmailCampaign**](UpdateEmailCampaign.md)| Values to update a campaign | 
 
 ### Return type
 
@@ -714,7 +653,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -724,7 +663,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **upload_image_to_gallery**
-> upload_image_to_gallery(upload_image)
+> upload_image_to_gallery(body)
 
 Upload an image to your account's image gallery
 
@@ -741,19 +680,14 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.EmailCampaignsApi(sib_api_v3_sdk.ApiClient(configuration))
-upload_image = sib_api_v3_sdk.UploadImageToGallery() # UploadImageToGallery | Parameters to upload an image
+body = sib_api_v3_sdk.UploadImageToGallery() # UploadImageToGallery | Parameters to upload an image
 
 try:
     # Upload an image to your account's image gallery
-    api_instance.upload_image_to_gallery(upload_image)
+    api_instance.upload_image_to_gallery(body)
 except ApiException as e:
     print("Exception when calling EmailCampaignsApi->upload_image_to_gallery: %s\n" % e)
 ```
@@ -762,7 +696,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **upload_image** | [**UploadImageToGallery**](UploadImageToGallery.md)| Parameters to upload an image | 
+ **body** | [**UploadImageToGallery**](UploadImageToGallery.md)| Parameters to upload an image | 
 
 ### Return type
 
@@ -770,7 +704,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 

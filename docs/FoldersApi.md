@@ -6,14 +6,13 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_folder**](FoldersApi.md#create_folder) | **POST** /contacts/folders | Create a folder
 [**delete_folder**](FoldersApi.md#delete_folder) | **DELETE** /contacts/folders/{folderId} | Delete a folder (and all its lists)
-[**get_folder**](FoldersApi.md#get_folder) | **GET** /contacts/folders/{folderId} | Returns a folder&#39;s details
+[**get_folder**](FoldersApi.md#get_folder) | **GET** /contacts/folders/{folderId} | Returns a folder&#x27;s details
 [**get_folder_lists**](FoldersApi.md#get_folder_lists) | **GET** /contacts/folders/{folderId}/lists | Get lists in a folder
 [**get_folders**](FoldersApi.md#get_folders) | **GET** /contacts/folders | Get all folders
 [**update_folder**](FoldersApi.md#update_folder) | **PUT** /contacts/folders/{folderId} | Update a folder
 
-
 # **create_folder**
-> CreateModel create_folder(create_folder)
+> CreateModel create_folder(body)
 
 Create a folder
 
@@ -30,19 +29,14 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
-create_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
+body = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try:
     # Create a folder
-    api_response = api_instance.create_folder(create_folder)
+    api_response = api_instance.create_folder(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FoldersApi->create_folder: %s\n" % e)
@@ -52,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
+ **body** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
@@ -60,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -87,11 +81,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -116,11 +105,11 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -143,11 +132,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -173,11 +157,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -200,11 +184,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -234,11 +213,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -261,11 +240,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -293,17 +267,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_folder**
-> update_folder(folder_id, update_folder)
+> update_folder(body, folder_id)
 
 Update a folder
 
@@ -320,20 +294,15 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.FoldersApi(sib_api_v3_sdk.ApiClient(configuration))
+body = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 folder_id = 789 # int | Id of the folder
-update_folder = sib_api_v3_sdk.CreateUpdateFolder() # CreateUpdateFolder | Name of the folder
 
 try:
     # Update a folder
-    api_instance.update_folder(folder_id, update_folder)
+    api_instance.update_folder(body, folder_id)
 except ApiException as e:
     print("Exception when calling FoldersApi->update_folder: %s\n" % e)
 ```
@@ -342,8 +311,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
  **folder_id** | **int**| Id of the folder | 
- **update_folder** | [**CreateUpdateFolder**](CreateUpdateFolder.md)| Name of the folder | 
 
 ### Return type
 
@@ -351,7 +320,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 

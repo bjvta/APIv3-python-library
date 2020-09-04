@@ -9,9 +9,8 @@ Method | HTTP request | Description
 [**get_attributes**](AttributesApi.md#get_attributes) | **GET** /contacts/attributes | List all attributes
 [**update_attribute**](AttributesApi.md#update_attribute) | **PUT** /contacts/attributes/{attributeCategory}/{attributeName} | Update contact attribute
 
-
 # **create_attribute**
-> create_attribute(attribute_category, attribute_name, create_attribute)
+> create_attribute(body, attribute_category, attribute_name)
 
 Create contact attribute
 
@@ -28,21 +27,16 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
+body = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the attribute
-create_attribute = sib_api_v3_sdk.CreateAttribute() # CreateAttribute | Values to create an attribute
 
 try:
     # Create contact attribute
-    api_instance.create_attribute(attribute_category, attribute_name, create_attribute)
+    api_instance.create_attribute(body, attribute_category, attribute_name)
 except ApiException as e:
     print("Exception when calling AttributesApi->create_attribute: %s\n" % e)
 ```
@@ -51,9 +45,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**CreateAttribute**](CreateAttribute.md)| Values to create an attribute | 
  **attribute_category** | **str**| Category of the attribute | 
  **attribute_name** | **str**| Name of the attribute | 
- **create_attribute** | [**CreateAttribute**](CreateAttribute.md)| Values to create an attribute | 
 
 ### Return type
 
@@ -61,7 +55,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -88,11 +82,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -119,11 +108,11 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -146,11 +135,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -172,17 +156,17 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_attribute**
-> update_attribute(attribute_category, attribute_name, update_attribute)
+> update_attribute(body, attribute_category, attribute_name)
 
 Update contact attribute
 
@@ -199,21 +183,16 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.AttributesApi(sib_api_v3_sdk.ApiClient(configuration))
+body = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 attribute_category = 'attribute_category_example' # str | Category of the attribute
 attribute_name = 'attribute_name_example' # str | Name of the existing attribute
-update_attribute = sib_api_v3_sdk.UpdateAttribute() # UpdateAttribute | Values to update an attribute
 
 try:
     # Update contact attribute
-    api_instance.update_attribute(attribute_category, attribute_name, update_attribute)
+    api_instance.update_attribute(body, attribute_category, attribute_name)
 except ApiException as e:
     print("Exception when calling AttributesApi->update_attribute: %s\n" % e)
 ```
@@ -222,9 +201,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**UpdateAttribute**](UpdateAttribute.md)| Values to update an attribute | 
  **attribute_category** | **str**| Category of the attribute | 
  **attribute_name** | **str**| Name of the existing attribute | 
- **update_attribute** | [**UpdateAttribute**](UpdateAttribute.md)| Values to update an attribute | 
 
 ### Return type
 
@@ -232,7 +211,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 

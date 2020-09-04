@@ -11,9 +11,8 @@ Method | HTTP request | Description
 [**get_senders**](SendersApi.md#get_senders) | **GET** /senders | Get the list of all your senders
 [**update_sender**](SendersApi.md#update_sender) | **PUT** /senders/{senderId} | Update a sender
 
-
 # **create_sender**
-> CreateSenderModel create_sender(sender=sender)
+> CreateSenderModel create_sender(body=body)
 
 Create a new sender
 
@@ -30,19 +29,14 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
-sender = sib_api_v3_sdk.CreateSender() # CreateSender | sender's name (optional)
+body = sib_api_v3_sdk.CreateSender() # CreateSender | sender's name (optional)
 
 try:
     # Create a new sender
-    api_response = api_instance.create_sender(sender=sender)
+    api_response = api_instance.create_sender(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SendersApi->create_sender: %s\n" % e)
@@ -52,7 +46,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sender** | [**CreateSender**](CreateSender.md)| sender&#39;s name | [optional] 
+ **body** | [**CreateSender**](CreateSender.md)| sender&#x27;s name | [optional] 
 
 ### Return type
 
@@ -60,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
@@ -87,11 +81,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -116,11 +105,11 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -143,11 +132,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -169,11 +153,11 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -196,11 +180,6 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
@@ -226,11 +205,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -253,15 +232,10 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
-ip = 'ip_example' # str | Filter your senders for a specific ip (available for dedicated IP usage only) (optional)
+ip = 'ip_example' # str | Filter your senders for a specific ip. **Available for dedicated IP usage only**  (optional)
 domain = 'domain_example' # str | Filter your senders for a specific domain (optional)
 
 try:
@@ -276,7 +250,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ip** | **str**| Filter your senders for a specific ip (available for dedicated IP usage only) | [optional] 
+ **ip** | **str**| Filter your senders for a specific ip. **Available for dedicated IP usage only**  | [optional] 
  **domain** | **str**| Filter your senders for a specific domain | [optional] 
 
 ### Return type
@@ -285,17 +259,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_sender**
-> update_sender(sender_id, sender=sender)
+> update_sender(sender_id, body=body)
 
 Update a sender
 
@@ -312,20 +286,15 @@ configuration = sib_api_v3_sdk.Configuration()
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
-# Configure API key authorization: partner-key
-configuration = sib_api_v3_sdk.Configuration()
-configuration.api_key['partner-key'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['partner-key'] = 'Bearer'
 
 # create an instance of the API class
 api_instance = sib_api_v3_sdk.SendersApi(sib_api_v3_sdk.ApiClient(configuration))
 sender_id = 789 # int | Id of the sender
-sender = sib_api_v3_sdk.UpdateSender() # UpdateSender | sender's name (optional)
+body = sib_api_v3_sdk.UpdateSender() # UpdateSender | sender's name (optional)
 
 try:
     # Update a sender
-    api_instance.update_sender(sender_id, sender=sender)
+    api_instance.update_sender(sender_id, body=body)
 except ApiException as e:
     print("Exception when calling SendersApi->update_sender: %s\n" % e)
 ```
@@ -335,7 +304,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sender_id** | **int**| Id of the sender | 
- **sender** | [**UpdateSender**](UpdateSender.md)| sender&#39;s name | [optional] 
+ **body** | [**UpdateSender**](UpdateSender.md)| sender&#x27;s name | [optional] 
 
 ### Return type
 
@@ -343,7 +312,7 @@ void (empty response body)
 
 ### Authorization
 
-[api-key](../README.md#api-key), [partner-key](../README.md#partner-key)
+[api-key](../README.md#api-key)
 
 ### HTTP request headers
 
